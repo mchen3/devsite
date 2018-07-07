@@ -50,7 +50,9 @@ class App extends Component {
     const { classes, ...rest } = this.props;
 
 
-    //console.log(this.props);
+    console.log(this.props);
+
+   console.log(classes.container);
 
 
     return (

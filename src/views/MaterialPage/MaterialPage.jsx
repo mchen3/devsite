@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 
@@ -14,11 +13,6 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import Radio from '@material-ui/core/Radio';
 import Paper from '@material-ui/core/Paper';
 
-
-// Sections for this page
-import ProductSection from "./Sections/ProductSection.jsx";
-import TeamSection from "./Sections/TeamSection.jsx";
-import WorkSection from "./Sections/WorkSection.jsx";
 
 
 // core components
@@ -74,6 +68,10 @@ const styles = theme => ({
   root: {
     flexGrow: 1,
   },
+
+  spacingData: {
+    spacing: 8,
+  },
   
   orangeTheme: {
     backgroundColor: orange[500],
@@ -83,6 +81,7 @@ const styles = theme => ({
   tealTheme: {
     backgroundColor: teal['A100'],
     color: teal[400],
+    margin:10,
   },
   
 
@@ -93,6 +92,7 @@ const styles = theme => ({
   
   redTheme: {
     backgroundColor: red[500],
+    margin:5,
   },
   
   paper: {
@@ -141,9 +141,41 @@ class App extends Component {
     return (
 
     <div>
+
+
+
+     
+     <br/><br/>
+
+
+      <div class="container">
+  <div class="row">
+  <div class="col-sm">
+      Material Page
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+  </div>
+</div>
+
+
       <br/><br/>
 
+
+
+
       <Grid container className={classes.root} spacing={16}>
+
+
+
+     
 
             {/*  Button1 is from Material UI
             Primary and Secondary are objects that come with Material UI */}
@@ -159,8 +191,8 @@ class App extends Component {
           <Button color="warning"> Sixth</Button>
         </Grid>
 
-        <Grid item xs={10}>
-          <Grid container className={classes.demo} justify="center" spacing={8}>
+        <Grid item xs={12}>
+          <Grid container className={classes.spacingData} justify="center" spacing={8}>
             <Button variant="contained" className={classes.blueTheme} >
               Default
             </Button>
@@ -195,7 +227,7 @@ class App extends Component {
               </Avatar>
               <ListItemText primary="Vacation" secondary="July 20, 2014" />
             </ListItem>
-            <ListItem className={classes.tealTheme}>
+            <ListItem className={classes.orangeTheme}>
               <Avatar className={classes.blueTheme}>
                 <WorkIcon />
               </Avatar>
@@ -219,20 +251,13 @@ class App extends Component {
         </Grid>
 
         <Grid item xs={12}>
-          <Grid container className={classes.root} justify="center" spacing={Number(spacing)}>
-          <Button variant="contained" className={classes.blueTheme} >
-            Default
-          </Button>
-          <Button variant="contained" color="primary" >
-           Primary
-          </Button>
-          <Button variant="contained" className={classes.redTheme} >
-            Secondary
-          </Button>
-          <Button1  className={classes.purpleTheme}> 
-           Seventh
-           </Button1>
-          </Grid>
+            <Grid container className={classes.demo} justify="center" spacing={Number(spacing)}>
+              {[0, 1, 2].map(value => (
+                <Grid key={value} item>
+                  <Paper className={classes.paper} />
+                </Grid>
+              ))}
+            </Grid>
         </Grid>
 
 
@@ -264,3 +289,5 @@ class App extends Component {
 }
 
 export default withStyles(styles)(App);
+
+

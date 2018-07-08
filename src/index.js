@@ -19,19 +19,10 @@ ReactDOM.render(
   <Router history={hist}>
     <Switch>
       {indexRoutes.map((prop, key) => {
-         //console.log(prop);
-         //console.log(key);
-         //console.log(prop.component);
-
-
-
         return <Route path={prop.path} key={key} component={prop.component} />;
-
       })}
     </Switch>
   </Router>,
   document.getElementById("root")
 );
 
-// ReactDOM.render(<App />, document.getElementById('root'));
-// registerServiceWorker();

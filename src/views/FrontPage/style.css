@@ -1,0 +1,23 @@
+
+
+.h1 {
+	font-family: fantasy;
+	font-size: 3em;
+	text-align: center; 
+	color: red;
+
+}
+
+.h2 {
+	font-family: fantasy;
+	font-size: 3em;
+	text-align: center; 
+	color: red;
+
+}
+
+.testDiv {
+	color: palegreen;
+	font-size: 50em;
+
+}
